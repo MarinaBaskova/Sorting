@@ -29,7 +29,7 @@ print(merge([1,10,50], [2,14,99]))
 # TO-DO: implement the Merge Sort function below USING RECURSION
 def merge_sort( arr ):
     # TO-DO
-    if len(arr) == 0:
+    if len(arr) <= 1:
         return arr
     middle = len(arr) // 2    
     # start 0 end middle point 
