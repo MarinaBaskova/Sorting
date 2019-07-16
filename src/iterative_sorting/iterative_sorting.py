@@ -1,7 +1,6 @@
 # TO-DO: Complete the selection_sort() function below 
 
 def selection_sort( arr ):
-    
     # loop through n-1 elements
     for i in range(0, len(arr) - 1):
         cur_index = i
@@ -29,5 +28,22 @@ def bubble_sort( arr ):
 
 # STRETCH: implement the Count Sort function below
 def count_sort( arr, maximum=-1 ):
+    if len(arr) == 0:
+        return arr
 
-    return arr
+    count_arr = [0] * (max(arr)+1)
+    sorted_arr = [None] * len(arr)
+
+    for num in arr:
+        if num < 0:
+            return "Error, negative numbers not allowed in Count Sort"
+        count_arr[num] += 1
+    
+    for i in range(1,len(count_arr)):
+        count_arr[i] = count_arr[i] + count_arr[i-1]
+        
+    for num in arr:
+        sorted_arr[count_arr[num]-1] = num
+        count_arr[num] -= 1
+    return sorted_arr
+
