@@ -26,9 +26,6 @@ def merge( arrA, arrB ):
 
 print(merge([1,10,50], [2,14,99]))
 
-##########################
-
-########################
 # TO-DO: implement the Merge Sort function below USING RECURSION
 def merge_sort( arr ):
     # TO-DO
@@ -37,7 +34,7 @@ def merge_sort( arr ):
     middle = len(arr) // 2    
     # start 0 end middle point 
     left_side = arr[0: middle] 
-    # start middle +1 end len(arr)  
+    # start middle and end len(arr)  
     right_side = arr[middle:] 
     left_result = merge_sort(left_side)
     right_result = merge_sort(right_side)         
